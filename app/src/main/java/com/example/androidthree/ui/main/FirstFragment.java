@@ -1,26 +1,23 @@
-package com.example.androidthree.ui;
+package com.example.androidthree.ui.main;
 
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.StringDef;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.androidthree.R;
-import com.example.androidthree.data.entity.fiveDayWeather.ForecastWeather;
 import com.example.androidthree.data.entity.weather.CurrentWeatherEntity;
 import com.example.androidthree.data.network.RetrofitBuilder;
+import com.example.androidthree.ui.Common;
 import com.example.androidthree.ui.base.BaseFragment;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.squareup.picasso.Picasso;
@@ -73,6 +70,14 @@ public class FirstFragment extends BaseFragment implements LocationListener {
 
     private BottomSheetBehavior bottomSheetBehavior;
 
+
+    @Override
+    protected int getViewLayout() {
+        return R.layout.fragment_first;
+
+
+    }
+
     public FirstFragment() {
         RetrofitBuilder.getInstance().getCurrentWeather("Bishkek", WEATHER_KEY, "metric")
                 .enqueue(new Callback<CurrentWeatherEntity>() {
@@ -97,28 +102,27 @@ public class FirstFragment extends BaseFragment implements LocationListener {
                 });
 
 
-
     }
 
-    @Override
-    protected int getViewLayout() {
-        return R.layout.fragment_first;
-
-
-    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initViews(view);
+        setupFragment();
     }
 
+    private void setupFragment() {
+        getActivity().getSupportFragmentManager().beginTransaction()
+                .add(R.id.container, new WeatherForecastFragment())
+                .commit();
+    }
 
     private void initViews(View v) {
         ConstraintLayout bottomSheetLayout = v.findViewById(R.id.bottom_sheet_forecast);
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
 
-        forecastDay = v.findViewById(R.id.forecast_day);
+//        forecastDay = v.findViewById(R.id.forecast_day);
         fTempMin = v.findViewById(R.id.f_temp_min);
         fTempMax = v.findViewById(R.id.f_temp_max);
         fDesc = v.findViewById(R.id.forecast_desc);
@@ -165,10 +169,8 @@ public class FirstFragment extends BaseFragment implements LocationListener {
 
     @SuppressLint("StringFormatMatches")
     private void setters(final CurrentWeatherEntity data) {
-        Picasso.get().load("https://www.openweathermap.org/img/wn/" + data.getWeather()
+        Picasso.get().load("https://www.openweathermap.org/img/w/" + data.getWeather()
                 .get(0).getIcon() + ".png").into(imageView1);
-
-
 
 
         textDesc.setText(new StringBuilder(String.valueOf(data.getWeather().get(0).getDescription())));

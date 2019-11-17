@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:paddingLeft="@dimen/margin_big"
     android:paddingRight="@dimen/margin_big"
-    tools:context=".ui.FirstFragment">
+    tools:context=".ui.main.FirstFragment">
 
 
     <RelativeLayout

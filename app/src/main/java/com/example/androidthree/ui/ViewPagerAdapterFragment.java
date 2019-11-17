@@ -1,7 +1,5 @@
 package com.example.androidthree.ui;
 
-import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -11,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ViewPagerAdapterFragment extends FragmentPagerAdapter {
+
     private final List<Fragment> mFragmentList = new ArrayList<>();
 
     public ViewPagerAdapterFragment(@NonNull FragmentManager fm, int behavior) {
@@ -32,7 +31,6 @@ public class ViewPagerAdapterFragment extends FragmentPagerAdapter {
     public void addFragment(Fragment fragment) {
         mFragmentList.add(fragment);
     }
-
 
 
 }

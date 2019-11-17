@@ -8,21 +8,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import com.example.androidthree.R;
-import com.example.androidthree.data.entity.weather.CurrentWeatherEntity;
-import com.example.androidthree.data.network.RetrofitBuilder;
-import com.example.androidthree.ui.FirstFragment;
 import com.example.androidthree.ui.SecondFragment;
 import com.example.androidthree.ui.ViewPagerAdapterFragment;
-import com.example.androidthree.ui.WeatherForecastFragment;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-import static com.example.androidthree.BuildConfig.WEATHER_KEY;
 
 public class MainActivity extends AppCompatActivity  {  ///implements DialogCallBack
-    private Fragment firstFragment, secondFragment, forcastFragment;
+    private Fragment firstFragment, secondFragment;
     private ViewPager viewPager;
 
     @Override
@@ -51,10 +41,10 @@ public class MainActivity extends AppCompatActivity  {  ///implements DialogCall
         ViewPagerAdapterFragment viewPagerAdapter = new ViewPagerAdapterFragment(getSupportFragmentManager(), 0);
         firstFragment = new FirstFragment();
         secondFragment = new SecondFragment();
-        forcastFragment = new WeatherForecastFragment();
         viewPagerAdapter.addFragment(firstFragment);
         viewPagerAdapter.addFragment(secondFragment);
         viewPager.setAdapter(viewPagerAdapter);
+       viewPagerAdapter.notifyDataSetChanged();
     }
 
     public static void start(Context context){
