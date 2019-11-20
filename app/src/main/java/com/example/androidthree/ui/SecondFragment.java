@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.androidthree.R;
+import com.example.androidthree.ui.base.BaseFragment;
 import com.example.androidthree.ui.base.BaseMapFragment;
 
 import butterknife.BindView;
@@ -22,7 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SecondFragment extends Fragment {
+public class SecondFragment extends BaseMapFragment {
 
 
     @BindView(R.id.testOne)
@@ -32,13 +33,10 @@ public class SecondFragment extends Fragment {
     Spinner spinner;
 
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+    protected int getViewLayout() {
+        return R.layout.fragment_second;
     }
-
-
 
     public SecondFragment() {
         // Required empty public constructor
