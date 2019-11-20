@@ -30,9 +30,9 @@ public class ForecastViewHolder extends RecyclerView.ViewHolder {
 
 
     public void bind(MyList myList) {
-        fTempMin.setText(String.valueOf(myList.main.getTemp_min()));
-        fTempMax.setText(String.valueOf(myList.main.getTemp_max()));
-        forecastDesc.setText(String.valueOf(myList.weather.get(0).description));
+//        fTempMin.setText(String.valueOf(myList.main.getTemp_min()));
+//        fTempMax.setText(String.valueOf(myList.main.getTemp_max()));
+//        forecastDesc.setText(String.valueOf(myList.weather.get(0).description));
 
         Picasso.get().load("https://www.openweathermap.org/img/w/" + myList.weather.get(0).icon
                 + ".png").into(imageViewForecast);

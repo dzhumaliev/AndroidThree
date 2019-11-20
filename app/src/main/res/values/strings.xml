@@ -4,6 +4,9 @@
     <string name="label2">В данном приложении вы можете учиться))</string>
     <string name="label3">В данном приложении вы можете обновлять))</string>
     <string name="label4">В данном приложении вы можете удалять</string>
+    <string name="tap_on_map_instruction">Tap anywhere on the map</string>
+
+
     <string name="label5">Спасибо что вы с нами))</string>
     <string name="buttonText">Далее</string>
     <string name="image_url">https://www.openweathermap.org/img/wn/%1s.png</string>

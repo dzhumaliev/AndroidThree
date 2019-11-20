@@ -169,19 +169,19 @@ public class FirstFragment extends BaseFragment implements LocationListener {
 
     @SuppressLint("StringFormatMatches")
     private void setters(final CurrentWeatherEntity data) {
-        Picasso.get().load("https://www.openweathermap.org/img/w/" + data.getWeather()
-                .get(0).getIcon() + ".png").into(imageView1);
-
-
-        textDesc.setText(new StringBuilder(String.valueOf(data.getWeather().get(0).getDescription())));
-        textCelsius.setText(data.getMain().getTemp() + "ºC");
-        presh.setText(data.getMain().getPressure() + " hpa");
-        humidity.setText(data.getMain().getHumidity() + " %");
-        sunrise.setText(Common.convertUnixToHour(data.getSys().getSunrise()));
-        sunset.setText(Common.convertUnixToHour(data.getSys().getSunset()));
-        wind.setText(new StringBuilder(String.valueOf(data.getWind().getSpeed())));
-        temp_min.setText((String.valueOf(data.getMain().getTemp_min())));
-        temp_max.setText((String.valueOf(data.getMain().getTemp_max())));
+//        Picasso.get().load("https://www.openweathermap.org/img/w/" + data.getWeather()
+//                .get(0).getIcon() + ".png").into(imageView1);
+//
+//
+//        textDesc.setText(new StringBuilder(String.valueOf(data.getWeather().get(0).getDescription())));
+//        textCelsius.setText(data.getMain().getTemp() + "ºC");
+//        presh.setText(data.getMain().getPressure() + " hpa");
+//        humidity.setText(data.getMain().getHumidity() + " %");
+//        sunrise.setText(Common.convertUnixToHour(data.getSys().getSunrise()));
+//        sunset.setText(Common.convertUnixToHour(data.getSys().getSunset()));
+//        wind.setText(new StringBuilder(String.valueOf(data.getWind().getSpeed())));
+//        temp_min.setText((String.valueOf(data.getMain().getTemp_min())));
+//        temp_max.setText((String.valueOf(data.getMain().getTemp_max())));
 
 
     }

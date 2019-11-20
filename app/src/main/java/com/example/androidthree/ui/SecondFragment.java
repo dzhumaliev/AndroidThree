@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.example.androidthree.R;
 import com.example.androidthree.ui.base.BaseFragment;
 import com.example.androidthree.ui.base.BaseMapFragment;
+import com.mapbox.android.core.location.LocationEngineResult;
 
 import butterknife.BindView;
 import retrofit2.Retrofit;
@@ -89,6 +90,8 @@ public class SecondFragment extends BaseMapFragment {
 
 
     }
+
+
 
 
 //    @Override
