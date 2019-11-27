@@ -8,8 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import com.example.androidthree.R;
-import com.example.androidthree.ui.SecondFragment;
-import com.example.androidthree.ui.ViewPagerAdapterFragment;
 
 public class MainActivity extends AppCompatActivity  {  ///implements DialogCallBack
     private Fragment firstFragment, secondFragment;

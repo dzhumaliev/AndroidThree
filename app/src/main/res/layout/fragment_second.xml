@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.SecondFragment"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.main.SecondFragment"
     android:orientation="vertical"
     android:background="@android:color/holo_purple">
 
@@ -12,6 +13,20 @@
         android:layout_width="match_parent"
         android:layout_height="695dp" />
 
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/darker_gray"
+        android:enabled="false"
+        android:text="Start navigation"
+        android:textColor="@android:color/white"
+        mapbox:layout_constraintStart_toStartOf="parent"
+        mapbox:layout_constraintTop_toTopOf="parent" />
 
     <include layout="@layout/bottom_sheet_money" />
 

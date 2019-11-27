@@ -1,4 +1,4 @@
-package com.example.androidthree.ui;
+package com.example.androidthree.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

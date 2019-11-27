@@ -1,4 +1,4 @@
-package com.example.androidthree.ui;
+package com.example.androidthree.ui.main;
 
 
 import android.os.Bundle;
@@ -29,6 +29,8 @@ public class SecondFragment extends BaseMapFragment {
 
     @BindView(R.id.testOne)
     TextView testOne;
+
+
     @BindView(R.id.testTwo)
     TextView testTwo;
     Spinner spinner;

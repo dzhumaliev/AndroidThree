@@ -1,4 +1,4 @@
-package com.example.androidthree.ui;
+package com.example.androidthree.ui.main;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

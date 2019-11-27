@@ -1,22 +1,15 @@
 package com.example.androidthree.ui.main;
 
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.androidthree.R;
 import com.example.androidthree.data.entity.fiveDayWeather.ForecastWeather;
 import com.example.androidthree.data.network.RetrofitBuilder;
-import com.example.androidthree.ui.ForecastAdapter;
 import com.example.androidthree.ui.base.BaseFragment;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import butterknife.BindView;
@@ -29,12 +22,17 @@ import static com.example.androidthree.BuildConfig.WEATHER_KEY;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class WeatherForecastFragment extends BaseFragment {
+public class WeatherForecastFragment extends BaseFragment implements Listener {
     private BottomSheetBehavior bottomSheetBehavior;
     ForecastAdapter adapter;
 
+
+
 //    @BindView(R.id.forecast_day)
 //    TextView forecastDay;
+
+
+
 //    @BindView(R.id.forecast_desc)
 //    TextView forecastDesc;
 //    @BindView(R.id.f_temp_min)
@@ -93,5 +91,10 @@ public class WeatherForecastFragment extends BaseFragment {
 
     private void displayForecastWeather(ForecastWeather weatherEntity) {
         adapter.update(weatherEntity.list);
+    }
+
+    @Override
+    public void onItemClick() {
+
     }
 }

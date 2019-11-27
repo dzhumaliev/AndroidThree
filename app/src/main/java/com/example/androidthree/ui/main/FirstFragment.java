@@ -17,10 +17,8 @@ import androidx.fragment.app.Fragment;
 import com.example.androidthree.R;
 import com.example.androidthree.data.entity.weather.CurrentWeatherEntity;
 import com.example.androidthree.data.network.RetrofitBuilder;
-import com.example.androidthree.ui.Common;
 import com.example.androidthree.ui.base.BaseFragment;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
