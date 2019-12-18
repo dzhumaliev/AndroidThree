@@ -71,7 +71,6 @@ public abstract class BaseMapFragment extends BaseFragment implements OnMapReady
     private FusedLocationProviderClient fusedLocationClient;
 
 
-
     private DirectionsRoute currentRoute;
     private static final String TAG = "DirectionsActivity";
     private NavigationMapRoute navigationMapRoute;
@@ -109,7 +108,7 @@ public abstract class BaseMapFragment extends BaseFragment implements OnMapReady
 
     @Override
     public void onMapReady(@NonNull MapboxMap mapboxMap) {
-        mapboxMap.setStyle(Style.SATELLITE_STREETS, style -> {
+        mapboxMap.setStyle(Style.DARK, style -> {
             map = mapboxMap;
             mapboxMap.addOnMapClickListener(BaseMapFragment.this);
             enableLocationComponent(map.getStyle());
@@ -132,7 +131,7 @@ public abstract class BaseMapFragment extends BaseFragment implements OnMapReady
                 boolean simulateRoute = true;
                 NavigationLauncherOptions options = NavigationLauncherOptions.builder()
                         .directionsRoute(currentRoute)
-                        .shouldSimulateRoute(simulateRoute)
+                        .shouldSimulateRoute(true)
                         .build();
                 NavigationLauncher.startNavigation(getActivity(), options);
             });
@@ -205,6 +204,7 @@ public abstract class BaseMapFragment extends BaseFragment implements OnMapReady
                             .build();
 
 
+
             locationComponent.activateLocationComponent(locationComponentActivationOptions);
 
             locationComponent.setLocationComponentEnabled(true);
@@ -229,7 +229,7 @@ public abstract class BaseMapFragment extends BaseFragment implements OnMapReady
 
 
         Point destinationPoint = Point.fromLngLat(point.getLongitude(), point.getLatitude());
-        Point originPoint = Point.fromLngLat(locationComponent.getLastKnownLocation().getLongitude(),
+        Point originPoint   = Point.fromLngLat(locationComponent.getLastKnownLocation().getLongitude(),
                 locationComponent.getLastKnownLocation().getLatitude());
 
         if (animator != null && animator.isStarted()) {
@@ -260,8 +260,6 @@ public abstract class BaseMapFragment extends BaseFragment implements OnMapReady
         getRoute(originPoint, destinationPoint);
         button.setEnabled(true);
         button.setBackgroundResource(R.color.mapbox_blue);
-
-
         return true;
     }
 
